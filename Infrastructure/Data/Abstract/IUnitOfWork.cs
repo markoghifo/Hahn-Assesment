@@ -1,4 +1,5 @@
 ﻿using Business.Interfaces.Repositories;
+using DataAccess.Repository.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Business.Data.Abstract
     public interface IUnitOfWork
     {
         IProductRepository Products { get; }
+        ICategoryRepository Categories { get; }
 
         Task CompleteAsync();
     }

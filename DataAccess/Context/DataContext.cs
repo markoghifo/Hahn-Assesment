@@ -15,10 +15,11 @@ namespace DataAccess.Context
             : base(options) { }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<CategoryFeatureOptions> CategoryFeatureOptions { get; set; }
+        //public DbSet<CategoryFeatureOptions> CategoryFeatureOptions { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<BrandModel> BrandModels { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductFeature> ProductFeatures { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<RequestDetail> RequestDetails { get; set; }
         public DbSet<Courier> Couriers { get; set; }
@@ -61,7 +62,10 @@ namespace DataAccess.Context
 
             builder.Entity<BrandModel>().Property(e => e.Features).HasConversion(stringValueConverter);
 
-            builder.Entity<CategoryFeatureOptions>().Property(e => e.Options).HasConversion(stringValueConverter);
+            builder.Entity<ProductFeature>().Property(e => e.Options).HasConversion(stringValueConverter);
+
+            builder.Entity<Category>().Property(e => e.Features).HasConversion(stringValueConverter);
+            //builder.Entity<CategoryFeatureOptions>().Property(e => e.Options).HasConversion(stringValueConverter);
 
             builder.Entity<CourierContact>().Property(e => e.Type).HasConversion(contactTypeValueConverter);
             #endregion conversions

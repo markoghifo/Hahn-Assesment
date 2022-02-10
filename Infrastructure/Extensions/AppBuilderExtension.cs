@@ -13,6 +13,22 @@ namespace Business.Extensions
 {
     public static class AppBuilderExtension
     {
+        public static IApplicationBuilder AddSwagger(this IApplicationBuilder app, IServiceProvider service)
+        {
+            app.UseSwagger(options =>
+            {
+                options.SerializeAsV2 = true;
+            });
+            //app.UseSwaggerUI();
+
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
+            });
+            return app;
+        }
+
         public static IApplicationBuilder SetupMigrations(this IApplicationBuilder app, IServiceProvider service)
         {
             var logger = service.GetService<ILogger<DataContext>>();

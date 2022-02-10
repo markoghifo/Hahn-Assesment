@@ -28,15 +28,15 @@ namespace Business.Extensions
             //    return new UnitOfWork(context);
             //});
 
-            service.AddIdentity<IdentityUser, IdentityRole>(
-                    options =>
-                    {
-                        options.SignIn.RequireConfirmedAccount = false;
+            //service.AddIdentity<IdentityUser, IdentityRole>(
+            //        options =>
+            //        {
+            //            options.SignIn.RequireConfirmedAccount = false;
 
-                        //Other options go here
-                    }
-                    )
-                .AddEntityFrameworkStores<AuthenticationDbContext>();
+            //            //Other options go here
+            //        }
+            //        )
+            //    .AddEntityFrameworkStores<AuthenticationDbContext>();
 
             service.AddDbContext<DataContext>(options =>
             {
@@ -71,6 +71,7 @@ namespace Business.Extensions
             });
 
             //service.AddSwaggerDocumentation();
+            service.AddSwaggerGen();
 
             service.AddCors(opt =>
             {

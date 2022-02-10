@@ -2,6 +2,7 @@
 using Business.Interfaces.Repositories;
 using DataAccess.Context;
 using DataAccess.Repository;
+using DataAccess.Repository.Interfaces.Repositories;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace DataAccess.Data
         private readonly DataContext _context;
         private readonly ILogger _logger;
         public IProductRepository Products { get; private set; }
+        public ICategoryRepository Categories { get; private set; }
 
         public UnitOfWork(DataContext context, ILoggerFactory loggerFactory)
         {
@@ -23,6 +25,7 @@ namespace DataAccess.Data
             _logger = loggerFactory.CreateLogger<UnitOfWork>();
 
             Products = new ProductRepository(_context, _logger);
+            Categories = new CategoryRepository(_context, _logger);
         }
 
         public async Task CompleteAsync()

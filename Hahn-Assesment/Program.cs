@@ -15,6 +15,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IServiceProvider, ServiceProvider>();
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,4 +40,8 @@ app.MapFallbackToFile("index.html");
 
 IServiceProvider serviceProvider = app.Services.GetService<IServiceProvider>();
 app.SetupMigrations(serviceProvider);
+if (app.Environment.IsDevelopment())
+{
+    app.AddSwagger(serviceProvider);
+}
 app.Run();

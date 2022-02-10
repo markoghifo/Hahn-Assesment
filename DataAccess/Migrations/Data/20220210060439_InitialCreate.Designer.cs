@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations.Data
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220202145957_InitialCreate")]
+    [Migration("20220210060439_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,6 +38,17 @@ namespace DataAccess.Migrations.Data
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
@@ -74,8 +85,17 @@ namespace DataAccess.Migrations.Data
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Features")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
@@ -109,8 +129,22 @@ namespace DataAccess.Migrations.Data
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Features")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
@@ -129,40 +163,6 @@ namespace DataAccess.Migrations.Data
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Business.Entities.CategoryFeatureOptions", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Options")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("CategoryFeatureOptions");
-                });
-
             modelBuilder.Entity("Business.Entities.Courier", b =>
                 {
                     b.Property<int>("Id")
@@ -177,6 +177,15 @@ namespace DataAccess.Migrations.Data
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
@@ -211,6 +220,15 @@ namespace DataAccess.Migrations.Data
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
 
@@ -244,10 +262,18 @@ namespace DataAccess.Migrations.Data
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2022, 2, 10, 7, 4, 39, 751, DateTimeKind.Local).AddTicks(7131));
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
@@ -260,7 +286,9 @@ namespace DataAccess.Migrations.Data
                         .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
@@ -305,7 +333,7 @@ namespace DataAccess.Migrations.Data
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Business.Entities.ProductFeatures", b =>
+            modelBuilder.Entity("Business.Entities.ProductFeature", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -320,22 +348,30 @@ namespace DataAccess.Migrations.Data
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Feature")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProductId")
+                    b.Property<string>("Options")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Value")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -368,11 +404,20 @@ namespace DataAccess.Migrations.Data
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("Fulfilled")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("FulfilledDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
@@ -413,11 +458,20 @@ namespace DataAccess.Migrations.Data
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("DateDeleted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("Fulfilled")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("FulfilledDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
@@ -460,13 +514,6 @@ namespace DataAccess.Migrations.Data
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("Business.Entities.CategoryFeatureOptions", b =>
-                {
-                    b.HasOne("Business.Entities.Category", null)
-                        .WithMany("Features")
-                        .HasForeignKey("CategoryId");
-                });
-
             modelBuilder.Entity("Business.Entities.CourierContact", b =>
                 {
                     b.HasOne("Business.Entities.Courier", "Courier")
@@ -503,11 +550,15 @@ namespace DataAccess.Migrations.Data
                     b.Navigation("Parent");
                 });
 
-            modelBuilder.Entity("Business.Entities.ProductFeatures", b =>
+            modelBuilder.Entity("Business.Entities.ProductFeature", b =>
                 {
-                    b.HasOne("Business.Entities.Product", null)
+                    b.HasOne("Business.Entities.Product", "Product")
                         .WithMany("Features")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Business.Entities.RequestDetail", b =>
@@ -532,11 +583,6 @@ namespace DataAccess.Migrations.Data
             modelBuilder.Entity("Business.Entities.Brand", b =>
                 {
                     b.Navigation("Models");
-                });
-
-            modelBuilder.Entity("Business.Entities.Category", b =>
-                {
-                    b.Navigation("Features");
                 });
 
             modelBuilder.Entity("Business.Entities.Courier", b =>

@@ -11,3 +11,4 @@ E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\Data
 E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
 E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
