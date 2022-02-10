@@ -18,6 +18,24 @@ namespace DataAccess.Repository
 
         }
 
+        public async Task<Category> GetByName(string name)
+        {
+            return await _dbSet.FirstOrDefaultAsync(x => x.Name == name);
+        }
+
+        public override async Task<bool> Add(Category entity)
+        {
+            var existing = await GetByName(entity.Name);
+            if (existing == null)
+            {
+                return await base.Add(entity);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public override async Task<IEnumerable<Category>> All()
         {
             return await _dbSet.Where(c => c.IsDeleted == false).ToListAsync();

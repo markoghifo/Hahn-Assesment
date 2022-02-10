@@ -17,7 +17,7 @@ namespace DataAccess.Migrations.Data
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
+                .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -54,13 +54,18 @@ namespace DataAccess.Migrations.Data
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Models")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Name");
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Brands");
                 });
@@ -93,7 +98,9 @@ namespace DataAccess.Migrations.Data
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime?>("LastUpdateDate")
                         .HasColumnType("datetime2");
@@ -103,11 +110,14 @@ namespace DataAccess.Migrations.Data
 
                     b.Property<string>("ModelNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
+
+                    b.HasIndex("ModelNumber")
+                        .IsUnique();
 
                     b.ToTable("BrandModels");
                 });
@@ -156,7 +166,8 @@ namespace DataAccess.Migrations.Data
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Name");
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Categories");
                 });
@@ -256,13 +267,16 @@ namespace DataAccess.Migrations.Data
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("BrandModelId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreateDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 2, 10, 7, 4, 39, 751, DateTimeKind.Local).AddTicks(7131));
+                        .HasDefaultValue(new DateTime(2022, 2, 10, 12, 23, 48, 979, DateTimeKind.Local).AddTicks(3934));
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
@@ -276,6 +290,9 @@ namespace DataAccess.Migrations.Data
 
                     b.Property<string>("Description")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Features")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsAvailable")
@@ -294,9 +311,6 @@ namespace DataAccess.Migrations.Data
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ModelId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -307,6 +321,9 @@ namespace DataAccess.Migrations.Data
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("SerialNumbers")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UnitsInStock")
                         .ValueGeneratedOnAdd()
@@ -320,62 +337,18 @@ namespace DataAccess.Migrations.Data
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BrandModelId");
+
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("ModelId");
+                    b.HasIndex("CreateDate");
 
-                    b.HasIndex("Name");
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.HasIndex("ParentId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("Business.Entities.ProductFeature", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DateDeleted")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Feature")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("LastUpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Options")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductFeatures");
                 });
 
             modelBuilder.Entity("Business.Entities.Request", b =>
@@ -504,7 +477,7 @@ namespace DataAccess.Migrations.Data
             modelBuilder.Entity("Business.Entities.BrandModel", b =>
                 {
                     b.HasOne("Business.Entities.Brand", "Brand")
-                        .WithMany("Models")
+                        .WithMany()
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -525,15 +498,15 @@ namespace DataAccess.Migrations.Data
 
             modelBuilder.Entity("Business.Entities.Product", b =>
                 {
+                    b.HasOne("Business.Entities.BrandModel", "BrandModel")
+                        .WithMany()
+                        .HasForeignKey("BrandModelId");
+
                     b.HasOne("Business.Entities.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Business.Entities.BrandModel", "Model")
-                        .WithMany()
-                        .HasForeignKey("ModelId");
 
                     b.HasOne("Business.Entities.Product", "Parent")
                         .WithMany("Variants")
@@ -541,22 +514,11 @@ namespace DataAccess.Migrations.Data
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.Navigation("BrandModel");
+
                     b.Navigation("Category");
 
-                    b.Navigation("Model");
-
                     b.Navigation("Parent");
-                });
-
-            modelBuilder.Entity("Business.Entities.ProductFeature", b =>
-                {
-                    b.HasOne("Business.Entities.Product", "Product")
-                        .WithMany("Features")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Business.Entities.RequestDetail", b =>
@@ -578,11 +540,6 @@ namespace DataAccess.Migrations.Data
                     b.Navigation("Request");
                 });
 
-            modelBuilder.Entity("Business.Entities.Brand", b =>
-                {
-                    b.Navigation("Models");
-                });
-
             modelBuilder.Entity("Business.Entities.Courier", b =>
                 {
                     b.Navigation("Contacts");
@@ -590,8 +547,6 @@ namespace DataAccess.Migrations.Data
 
             modelBuilder.Entity("Business.Entities.Product", b =>
                 {
-                    b.Navigation("Features");
-
                     b.Navigation("Variants");
                 });
 

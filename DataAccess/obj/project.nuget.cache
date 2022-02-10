@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "loWjhwXRTVbW1aL8Ba55bkEuGdvmIRtqr7Hgp8bY4OupoqaHNgD1QrT82953MZnXp3DtEX8MeBlB7h0jgBhNSQ==",
+  "dgSpecHash": "qgIdy1Rv8OrrQvIut4hsK7t+Vq4P06dk9j/1CmBWqiQsQrW/v5jMpbOE9kxzuzTAFovUtm5zyqcOsh6zM2zPhw==",
   "success": true,
   "projectFilePath": "E:\\Documents\\DotNetCore Projects\\Hahn-Assesment\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\Hp Omen\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Hp Omen\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Hp Omen\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Hp Omen\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Hp Omen\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Hp Omen\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Hp Omen\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

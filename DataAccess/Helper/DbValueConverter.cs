@@ -1,5 +1,6 @@
 ﻿using Business.Entities;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace DataAccess.Helper
                 return null;
             }
 
-            return (ICollection<int>?)value.Split(',').Select(i => Convert.ToInt32(i));
+            return value.Split(',').Select(i => Convert.ToInt32(i)).ToList();
 
         }
     }
@@ -59,7 +60,7 @@ namespace DataAccess.Helper
                 return null;
             }
 
-            return (ICollection<string>?)value.Split(',').Select(i => i); 
+            return value.Split(',').Select(i => i).ToList(); 
 
         }
     }
@@ -86,6 +87,32 @@ namespace DataAccess.Helper
 
             Enum.TryParse<ContactType>(value, true, out var contactType);
             return contactType;
+        }
+    }
+
+    public class TypeListToStringListValueConversion<T> : ValueConverter<ICollection<T>, string>
+    {
+        public TypeListToStringListValueConversion() : base(le => ListToString(le), (s => StringToList(s)))
+        {
+
+        }
+        public static string? ListToString(ICollection<T> values)
+        {
+            if (values == null || values.Count() == 0)
+            {
+                return null;
+            }
+
+            return JsonConvert.SerializeObject(values);
+        }
+
+        public static ICollection<T>? StringToList(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return null;
+            }
+            return JsonConvert.DeserializeObject<ICollection<T>>(value);
         }
     }
 }

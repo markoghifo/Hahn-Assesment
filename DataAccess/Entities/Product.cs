@@ -12,6 +12,7 @@ namespace Business.Entities
         public Product()
         {
             Features = new HashSet<ProductFeature>();
+            SerialNumbers = new HashSet<string>();
         }
 
         public string Name { get; set; } = string.Empty;
@@ -21,10 +22,12 @@ namespace Business.Entities
         public int Quantity { get; set; }
         //public bool IsDeleted { get; set; }
         public bool IsAvailable { get; set; }
-        public virtual BrandModel? Model { get; set; }
+        public int? BrandModelId { get; set; }
+        public virtual BrandModel? BrandModel { get; set; }
         public int UnitsInStock { get; set; }
         public int UnitsOnOrder { get; set; }
         public ICollection<ProductFeature>? Features { get; set; }
+        public ICollection<string>? SerialNumbers { get; set; }
 
         public int? ParentId { get; set; }
         public Product Parent { get; set; }
@@ -34,10 +37,10 @@ namespace Business.Entities
     }
 
     //[Keyless]
-    public class ProductFeature: EntityAuditableModel
+    public class ProductFeature
     {
-        public int ProductId { get; set; }
-        public virtual Product Product { get; set; }
+        //public int ProductId { get; set; }
+        //public virtual Product Product { get; set; }
         public string Feature { get; set; } = string.Empty;
         public ICollection<string>? Options { get; set; }
     }

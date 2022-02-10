@@ -12,6 +12,7 @@ namespace Business.Data.Abstract
     {
         IProductRepository Products { get; }
         ICategoryRepository Categories { get; }
+        IBrandRepository Brands { get; }
 
         Task CompleteAsync();
     }

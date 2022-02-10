@@ -13,18 +13,18 @@ namespace Business.Extensions
 {
     public static class AppBuilderExtension
     {
-        public static IApplicationBuilder AddSwagger(this IApplicationBuilder app, IServiceProvider service)
+        public static IApplicationBuilder AddSwagger(this IApplicationBuilder app)
         {
             app.UseSwagger(options =>
             {
-                options.SerializeAsV2 = true;
+                //options.SerializeAsV2 = true;
             });
             //app.UseSwaggerUI();
 
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-                options.RoutePrefix = string.Empty;
+                //options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                //options.RoutePrefix = string.Empty;
             });
             return app;
         }

@@ -14,6 +14,9 @@ namespace Business.Helpers
         public AutoMapping()
         {
             CreateMap<CreateCategoryDTO, Category>().ReverseMap();
+            CreateMap<CreateProductDTO, Product>().ReverseMap();
+            CreateMap<CreateBrandDTO, Brand>().ReverseMap();
+            CreateMap<CreateBrandModel, BrandModel>().ReverseMap();
         }
     }
 }

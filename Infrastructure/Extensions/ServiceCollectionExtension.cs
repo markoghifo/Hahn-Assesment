@@ -22,12 +22,6 @@ namespace Business.Extensions
         {
             string connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            //service.AddScoped(typeof(IUnitOfWork), u =>
-            //{
-            //    var context = u.GetService<DataContext>();
-            //    return new UnitOfWork(context);
-            //});
-
             //service.AddIdentity<IdentityUser, IdentityRole>(
             //        options =>
             //        {
@@ -41,6 +35,12 @@ namespace Business.Extensions
             service.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlServer(connectionString);
+            });
+
+            service.AddScoped(typeof(IUnitOfWork), u =>
+            {
+                var context = u.GetService<DataContext>();
+                return new UnitOfWork(context);
             });
 
 

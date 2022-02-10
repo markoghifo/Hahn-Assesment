@@ -12,6 +12,6 @@ namespace DataAccess.Repository.Interfaces.Repositories
     public interface ICategoryRepository : IGenericRepository<Category>
     {
         //declare entity specific methods ....
-
+        Task<Category> GetByName(string name);
     }
 }
