@@ -1,0 +1,19 @@
+<div class="title text-center p-4 mb-4">
+    <h2>Empirical submissions are encouraged to all areas of accountancy and finance :</h2>
+</div>
+<div class="p-4 full-width">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <div class="col mb-4" *ngFor="let j of journals">
+            <div class="card h-100 p-3 border-light">
+                <div class="avatar avatar-sm p-2">
+                    <img src="../../../../assets/images/icons/journal/{{j.icon}}" alt="icon" height="20px"
+                        width="20px">
+                </div>
+                <div class="text-center">
+                    <h6 class="mb-2">{{j.title}}</h6>
+                    <p>{{j.excerpt}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

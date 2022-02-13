@@ -1,0 +1,89 @@
+<form action="submit" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="inputFName">Full Name</label>
+        <input type="text" id="inputFName" class="form-control" formControlName="fName"
+            placeholder="Enter your First Name" required autofocus>
+        <div *ngIf="fName?.invalid && (fName?.dirty || fName?.touched)" class="alert alert-danger">
+            <div *ngIf="fName?.errors?.['required']">
+                First Name is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" formControlName="email"
+            placeholder="Enter your Email Address" required>
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
+            <div *ngIf="email?.errors?.['required']">
+                Email is required.
+            </div>
+            <div *ngIf="email?.invalid">
+                Pls enter a valid email
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <div class="input-group mb-2">
+            <input type="{{showPassword ? 'text' : 'password'}}" id="inputPassword"
+                class="form-control password-text-box" placeholder="Enter your Password" formControlName="password"
+                required>
+            <div class="input-group-append">
+                <a class="input-group-text pointer" (click)="showPassword = !showPassword">
+                    <i class="fa-solid fa-eye-slash text-dark" [ngClass]="{showPassword: 'fa-eye'}"></i> 
+                </a>
+            </div>
+        </div>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger">
+            <div *ngIf="password?.errors?.['required']">
+                Password is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputCPassword">Confirm Password</label>
+        <div class="input-group mb-2">
+            <input type="{{showPassword ? 'text' : 'password'}}" id="inputCPassword"
+                class="form-control password-text-box" placeholder="Confirm Password" formControlName="cPassword"
+                required>
+            <div class="input-group-append">
+                <a class="input-group-text pointer" (click)="showPassword = !showPassword">
+                    <i class="fa-solid fa-eye-slash text-dark" [ngClass]="{showPassword: 'fa-eye'}"></i> 
+                </a>
+            </div>
+        </div>
+        <div *ngIf="cPassword?.invalid && (cPassword?.dirty || cPassword?.touched)" class="alert alert-danger">
+            <div *ngIf="cPassword?.errors?.['required']">
+                Confirm Password is required.
+            </div>
+            <div *ngIf="cPassword?.value !== password?.value">
+                Password and Confirm Password not the same.
+            </div>
+        </div>
+    </div>
+    <div class="checkbox mb-3">
+        <label class="terms-and-conditions-text">
+            <input type="checkbox" (change)="change($event)" [disabled]="loading || !checkIfDataIsValid()"
+                #termsAndConditions value="terms and conditions"> by Signing Up you accept our <a href=""
+                target="_blank">Terms and Conditions</a>
+        </label>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-lg btn-block w-100 btn-secondary"
+            [disabled]="!isChecked || !checkIfDataIsValid() || loading" type="submit">
+            REGISTER ACCOUNT
+            <i class="fa {{loading ? 'fa-spin fa-spinner' : 'fa-register'}}"></i>
+        </button>
+    </div>
+    <div class="form-group mt-3">
+        <button class="btn btn-lg btn-block w-100 bg-white" [disabled]="loading" type="button">
+            <img src="../../../../assets/images/icons/google-icon.png" height="20px" width="20px" alt=""> &nbsp;
+            Register with Google
+            <i class="fa {{loading ? 'fa-spin fa-spinner' : 'fa-register'}}"></i>
+        </button>
+    </div>
+
+    <div>
+        ALREADY HAVE AN ACCOUNT? &nbsp; <a [routerLink]="['/auth/login']">LOGIN</a>
+    </div>
+</form>

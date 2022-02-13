@@ -1,0 +1,42 @@
+<div class="row" id="section">
+    <div class="col-md-6 d-none d-md-block" id="main">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 text-white">
+            <a href="/" class="d-flex align-items-center mb-md-0 text-dark text-decoration-none">
+                <img src="../../../assets/images/ICAN-header-Logo.png" alt="ICAN logo" height="30px">
+            </a>
+        </header>
+        <div class="my-auto vertical-center">
+            <div>
+                <p class="mb-0">IJCAI provides a global forum to enhance </p>
+                <p class="mb-0">communication among scholars and practitioners </p>
+                <p class="mb-0">on emerging and established areas of </p>
+                <p class="mb-0">accountancy and finance research specifically </p>
+                <p class="mb-0">and business administration, economics and</p>
+                <p class="mb-0">operations generally.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6" id="auth">
+        <div id="header" class="d-flex justify-content-between">
+            <a href="/" class="text-dark text-decoration-none back">
+                Home
+            </a>
+
+            <div class="text-end">
+                <p class="mb-0 stepNo">STEP {{stepNo}}</p>
+                <p class="mb-0 stepText">{{stepText}}</p>
+            </div>
+        </div>
+        <div class="vertical-center">
+            <div class="page mb-3">
+                <h4 class="pageTitle">{{pageTitle}}</h4>
+                <p class="pageText">
+                    {{pagePretext}}
+                </p>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+    </div>
+</div>

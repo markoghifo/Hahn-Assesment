@@ -2,6 +2,9 @@ using Business.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Force core to utilise port 80
+builder.WebHost.UseUrls("http://*:80");
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -13,9 +16,9 @@ ConfigurationManager configuration = builder.Configuration;
 
 builder.Services.AddDatabaseService(configuration);
 builder.Services.AddServices(configuration);
-builder.Services.AddDataAccessServices();
+// builder.Services.AddDataAccessServices();
 
-builder.Services.AddSingleton<IServiceProvider, ServiceProvider>();
+// builder.Services.AddSingleton<IServiceProvider, ServiceProvider>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
@@ -32,6 +35,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-IServiceProvider serviceProvider = app.Services.GetService<IServiceProvider>();
-app.SetupMigrations(serviceProvider);
+// IServiceProvider serviceProvider = app.Services.GetService<IServiceProvider>();
+app.SetupMigrations();
 app.Run();

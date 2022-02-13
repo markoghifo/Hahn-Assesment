@@ -1,0 +1,21 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  HahnAssesmentDb:
+    container_name: HahnAssesmentDb
+    ports:
+      - '1460:1433'
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "P@ssw0rd1#"
+      MSSQL_PID: Express
+  api:
+    image: api
+    container_name: api
+    restart: on-failure
+    depends_on: 
+      - HahnAssesmentDb
+    ports:
+      - 9999:80

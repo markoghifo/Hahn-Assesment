@@ -1,0 +1,135 @@
+<div class="bg-secondary">
+    <app-header></app-header>
+</div>
+<div id="main">
+    <section id="top" class="bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" id="title">
+                    High-quality research
+                    in <span class="title2">Accountancy</span> and <span class="title2">Finance</span>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <img src="../../../assets/images/journals-page/top-image.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="how-we-work" class="p-4 text-black">
+        <div class="container p-4 my-4">
+            <div class="row">
+                <div class="col-md-4 h-100">
+                    <h4 class="mb-3">How we work</h4>
+                    <p>
+                        <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</small>
+                    </p>
+                    <p>
+                        <small>
+                            <a href="" class="text-secondary">
+                                Get in touch with us -->
+                            </a>
+                        </small>
+
+                    </p>
+                </div>
+                <div class="col-md-8 h-100">
+                    <div class="row">
+                        <div class="col-6 p-4 m-0" *ngFor="let ws of workStyles; let i=index;">
+                            <div class="img center mb-4">
+                                <div class="content text-white">0{{i+1}}</div>
+                            </div>
+                            <h5>{{ws}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="journals" class="py-4">
+        <div class="container">
+            <div class="m-3">
+                <h3 class="my-4">
+                    View our Journals
+                    <span>
+                        <small>
+                            <a class="pull-right float-right" href="#">View More -->
+                            </a>
+                        </small>
+                    </span>
+                </h3>
+
+                <div class="row" id="projects">
+                    <div class="col-md-8 " style="height: 410px;">
+                        <div class="focused center h-100">
+                            <div class="content">
+                                <!-- <a href="" class="text-primary">View Project </a> -->
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-4">
+                        <div style="height: 200px;" class="mb-2 center side border-primary">
+                            <div class="content">
+                                <!-- <a href="" class="text-primary">View Project </a> -->
+                            </div>
+                        </div>
+                        <div style="height: 200px;" class="center side border-primary">
+                            <div class="content">
+                                <!-- <a href="" class="text-primary">View Project /a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="journal-listing" class="border border-light p-2">
+                <div class="card mb-2">
+                    <div class="card-header">
+                        <h4>Continue Reading</h4>
+                        <ul ngbNav #nav="ngbNav" class="nav-tabs">
+                            <li ngbNavItem>
+                                <a ngbNavLink>Journal 1</a>
+                                <ng-template ngbNavContent>
+                                    first
+                                    <app-single-journal-card></app-single-journal-card>
+                                </ng-template>
+                            </li>
+                            <li ngbNavItem>
+                                <a ngbNavLink>Journal 2</a>
+                                <ng-template ngbNavContent>
+                                    second
+                                    <app-single-journal-card></app-single-journal-card>
+                                </ng-template>
+                            </li>
+                        </ul>
+                        <div class="card-body" [ngbNavOutlet]="nav"></div>
+                        <!-- <ul class="nav nav-tabs card header-tabs">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active">Journal 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Journal 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Journal 3</a>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <!-- <div class="card-body">
+                        <app-single-journal-card></app-single-journal-card>
+                    </div> -->
+                </div>
+
+                <h4 class="mb-2 px-4"> Recommendations</h4>
+                <div class="mb-2" *ngFor="let j of journals">
+                    <app-single-journal-card></app-single-journal-card>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

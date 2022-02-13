@@ -1,0 +1,26 @@
+<section class="bg-white" id="section1">
+    <h1 class="mb-4 text-center">Code of Ethics</h1>
+    <p>
+        The IJCAI and V/I Publishers consider and reflect in its publication the highest ethical considerations. We
+        expect all our stakeholders, namely: authors, editors, reviewers, editorial board members to abide by the
+        Journal’s Code of Ethics.
+    </p>
+    <p>
+        For full details, please visit the <a class="text-primary" [routerLink]="['/journals']">Journal website</a>
+    </p>
+</section>
+<section class="bg-white" id="section2">
+    <div id="ethics">
+        <div class="row">
+            <div class="col-md-4 py-3 h-100" *ngFor="let et of ethics">
+                <div class="">
+                    <img src="{{et.imgSrc}}" alt="ethic" width="100%" class="img img-responsive" style="max-height: 300px;">
+                </div>
+                <div class="mt-2">
+                    <h2 class="mb-2">{{et.title}}</h2>
+                    <small><a class="text-secondary" routerLink="./">Read More --></a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

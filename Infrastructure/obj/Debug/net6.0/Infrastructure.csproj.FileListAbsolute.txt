@@ -1,0 +1,15 @@
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/bin/Debug/net6.0/Infrastructure.deps.json
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/bin/Debug/net6.0/Infrastructure.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/bin/Debug/net6.0/ref/Infrastructure.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/bin/Debug/net6.0/Infrastructure.pdb
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/bin/Debug/net6.0/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/bin/Debug/net6.0/DataAccess.pdb
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.AssemblyReference.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/Infrastructure.AssemblyInfoInputs.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/Infrastructure.AssemblyInfo.cs
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.CopyComplete
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/Infrastructure.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/ref/Infrastructure.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/Debug/net6.0/Infrastructure.pdb

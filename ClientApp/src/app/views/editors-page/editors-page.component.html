@@ -1,0 +1,23 @@
+<div class="bg-secondary">
+    <app-header></app-header>
+</div>
+<app-default-page-template [pageTitle]="'Editors Page'" [extraText]="''" [pageText]="'For full information, authors are directed to read Authors Guidelines of the IJCAI.'" [btnText]="'Find Journals'"></app-default-page-template>
+<div id="editorialTeam">
+    <div class="title text-center mb-4">
+        <h1>Editorial Team</h1>
+        <img src="../../../assets/images/editorial-team-title.png" alt="">
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-xs-6 py-3" *ngFor="let editor of editors">
+            <div class="text-center">
+                <img src="{{editor.imgSrc}}" alt="editor" class="img img-rounded-circle img-circle rounded-circle" height="200px">
+            </div>
+            <div class="text-center info">
+                <h4>
+                    {{editor.name}}
+                </h4>
+                <p>{{editor.title}} | {{editor.companyName}}</p>
+            </div>
+        </div>
+    </div>
+</div>

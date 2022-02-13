@@ -37,11 +37,13 @@ namespace Business.Extensions
                 options.UseSqlServer(connectionString);
             });
 
-            service.AddScoped(typeof(IUnitOfWork), u =>
-            {
-                var context = u.GetService<DataContext>();
-                return new UnitOfWork(context);
-            });
+            service.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // service.AddScoped(typeof(IUnitOfWork), u =>
+            // {
+            //     var context = u.GetService<DataContext>();
+            //     return new UnitOfWork(context);
+            // });
 
 
             return service;
@@ -84,12 +86,12 @@ namespace Business.Extensions
             return service;
         }
 
-        public static IServiceCollection AddDataAccessServices(this IServiceCollection services)
-        {
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddTransient<IMobileMoneyRequestRepository, MobileMoneyRequestRepository>();
-            //services.AddTransient<IMpesaTranDetailsRepository, MpesaTranDetailsRepository>();
-            return services;
-        }
+        // public static IServiceCollection AddDataAccessServices(this IServiceCollection services)
+        // {
+        //     services.AddScoped<IUnitOfWork, UnitOfWork>();
+        //     //services.AddTransient<IMobileMoneyRequestRepository, MobileMoneyRequestRepository>();
+        //     //services.AddTransient<IMpesaTranDetailsRepository, MpesaTranDetailsRepository>();
+        //     return services;
+        // }
     }
 }

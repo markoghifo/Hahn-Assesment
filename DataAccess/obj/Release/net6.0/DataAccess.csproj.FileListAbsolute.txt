@@ -1,0 +1,13 @@
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Release/net6.0/DataAccess.deps.json
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Release/net6.0/DataAccess.runtimeconfig.json
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Release/net6.0/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Release/net6.0/ref/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Release/net6.0/DataAccess.pdb
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Release/net6.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Release/net6.0/DataAccess.AssemblyInfoInputs.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Release/net6.0/DataAccess.AssemblyInfo.cs
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Release/net6.0/DataAccess.csproj.CoreCompileInputs.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Release/net6.0/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Release/net6.0/ref/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Release/net6.0/DataAccess.pdb
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Release/net6.0/DataAccess.genruntimeconfig.cache

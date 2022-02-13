@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-secondary bg-secondary text-white">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08"
+            aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+            <ul class="navbar-nav">
+                <li [routerLink]="['']" routerLinkActive="active-link"><span class="nav-link px-2">Home</span></li>
+                <li ngbDropdown class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" id="publishDropDownLinks" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+                        Publishing
+                    </a>
+                    <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-light"
+                        aria-labelledby="publishDropDownLinks">
+                        <li [routerLink]="['/publish']" ngbDropdownItem><a class="dropdown-item">Published</a></li>
+                        <li [routerLink]="['/editors']" ngbDropdownItem><a class="dropdown-item">Editors</a></li>
+                    </ul>
+                </li>
+                <li [routerLink]="['/articles']" routerLinkActive="active-link"><span
+                        class="nav-link px-2">Articles</span></li>
+                <li [routerLink]="['/journals']" routerLinkActive="active-link"><span
+                        class="nav-link px-2">Journals</span></li>
+                <!-- <li [routerLink]="['/find']" routerLinkActive="active-link"><span class="nav-link px-2">Find</span></li> -->
+                <li ngbDropdown class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" id="infoDropDownLinks" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" ngbDropdownToggle>
+                        Info
+                    </a>
+                    <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-ligh" aria-labelledby="infoDropDownLinks">
+                        <li [routerLink]="['/info/peer-review']" ngbDropdownItem><a
+                                class="dropdown-item">Peer-Review</a></li>
+                        <li [routerLink]="['/info/code-of-ethics']" ngbDropdownItem><a class="dropdown-item">Code of
+                                Ethics</a></li>
+                        <li [routerLink]="['/info/editorial-procedures']" ngbDropdownItem><a
+                                class="dropdown-item">Editorial
+                                Procedures</a></li>
+                        <li [routerLink]="['/info/journal-information']" ngbDropdownItem><a
+                                class="dropdown-item">Journal
+                                Information</a></li>
+                        <li [routerLink]="['/info/faq']" ngbDropdownItem><a class="dropdown-item">FAQs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="center"
+    style="height: 500px; width: 100%; background-repeat: no-repeat; color: #ffffff; opacity: 1;background-size: 100% 100%;"
+    [ngStyle]="{'background-image': bgImgSrc}">
+    <h1 class="content"
+        style="text-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.11); font-weight: 600; font-size: 48px;">{{title}}</h1>
+</div>
+<router-outlet></router-outlet>

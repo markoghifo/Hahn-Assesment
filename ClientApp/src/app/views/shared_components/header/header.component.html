@@ -1,0 +1,47 @@
+<header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 text-white">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <img src="../../../assets/images/ICAN-header-Logo.png" alt="ICAN logo" height="50px">
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li [routerLink]="['']"><span class="nav-link px-2">Home</span></li>
+        <!-- <li><span class="nav-link px-2">Publish</span></li> -->
+        <li ngbDropdown class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="publishDropDownLinks" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" ngbDropdownToggle>
+                Publishing
+            </a>
+            <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-ligh" aria-labelledby="publishDropDownLinks">
+                <li [routerLink]="['/publish']" ngbDropdownItem><a class="dropdown-item">Published</a></li>
+                <li [routerLink]="['/editors']" ngbDropdownItem><a class="dropdown-item">Editors</a></li>
+            </ul>
+        </li>
+        <li [routerLink]="['/articles']"><span class="nav-link px-2">Articles</span></li>
+        <li [routerLink]="['/journals']"><span class="nav-link px-2">Journals</span></li>
+        <!-- <li [routerLink]="['/find']"><span class="nav-link px-2">Find</span></li> -->
+        <li ngbDropdown class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="infoDropDownLinks" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" ngbDropdownToggle>
+                Info
+            </a>
+            <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-ligh" aria-labelledby="infoDropDownLinks">
+                <li [routerLink]="['/info/peer-review']" ngbDropdownItem><a class="dropdown-item">Peer-Review</a></li>
+                <li [routerLink]="['/info/code-of-ethics']" ngbDropdownItem><a class="dropdown-item">Code of Ethics</a></li>
+                <li [routerLink]="['/info/editorial-procedures']" ngbDropdownItem><a class="dropdown-item">Editorial
+                        Procedures</a></li>
+                <li [routerLink]="['/info/journal-information']" ngbDropdownItem><a class="dropdown-item">Journal
+                        Information</a></li>
+                <li [routerLink]="['/info/faq']" ngbDropdownItem><a class="dropdown-item">FAQs</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+        <button [routerLink]="['/auth/login']" type="button"
+            class="btn btn-outline-primary px-md-3 px-lg-4 px-sm-2 mx-2 auth-button" id="login"> Login
+        </button>
+        <button [routerLink]="['/auth/register']" type="button"
+            class="btn btn-primary px-md-3 px-lg-4 px-sm-2 mx-2 auth-button" id="signup">Sign-up</button>
+    </div>
+</header>

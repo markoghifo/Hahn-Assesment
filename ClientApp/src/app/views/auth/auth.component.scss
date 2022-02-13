@@ -1,0 +1,80 @@
+#section {
+    font-family: Inter;
+    font-style: normal;
+    // height: 100vh;
+    // overflow-y: scroll;
+    #main {
+        background-color: #1565d8;
+        background-image: url(../../../assets/images/auth-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 38px;
+        padding: 50px 100px;
+        // height: 100vh;
+        /* or 190% */
+
+        // display: flex;
+        // align-items: center;
+
+        color: #ffffff;
+
+        .info {
+            vertical-align: middle;
+        }
+    }
+
+    #auth {
+        background-color: #e5e5e5;
+        padding: 3rem 6rem;
+        // height: 100vh;
+        // position: relative;
+        #header {
+            margin-bottom: 20px;
+            .back {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                // display: flex;
+                // align-items: center;
+
+                color: #8692a6;
+            }
+            .stepNo {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                /* identical to box height */
+
+                // display: flex;
+                // align-items: center;
+                // text-align: right;
+
+                color: #bdbdbd;
+            }
+            .stepText {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                // display: flex;
+                // align-items: center;
+                // text-align: right;
+
+                color: #8692a6;
+            }
+        }
+        .vertical-center{
+            // width: 100%;
+            position: relative;
+        }
+        .pageTitle {
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .pageText {
+            font-weight: normal;
+            font-size: 18px;
+        }
+    }
+}

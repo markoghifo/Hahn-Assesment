@@ -1,0 +1,46 @@
+<section class="bg-white" id="section1">
+    <h1 class="mb-4 text-center">The IJCAI's Peer-Review Procedure</h1>
+    <p>
+        In the peer-review procedure, the IJCAI ensure two referees independently assess the scientific quality of the
+        submitted manuscripts.
+    </p>
+    <p>
+        Peer reviewers are sometimes called “experts” chosen by journal editors to provide written assessment of the
+        strengths and weaknesses of written research. The peer review process serves the purpose of improving the
+        reporting of research as well as identifying the most appropriate and highest quality material for the review.
+    </p>
+</section>
+<section class="" class="section2">
+    <div class="mb-4">
+        <h1 class="mb-3 text-center">Quality Criteria Evaluation</h1>
+        <p>
+            <small>
+                <span class="d-block">IJCAI adopts seven stages for its quality criteria evaluation of the manuscripts
+                    submitted. </span>
+                <span class="d-block">These are:</span>
+            </small>
+        </p>
+    </div>
+    <div id="evaluations">
+        <div class="evaluation" *ngFor="let ev of evaluations">
+            <div class="text-center">
+                <img src="{{ev.imgSrc}}" alt="ev" height="50px" width="50px">
+            </div>
+            <div class="">
+                <p class="mb-0" style="text-align: left;" *ngFor="let tx of ev.texts">{{tx}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section
+    style="background-image: url(../../../../assets/images/info/peer-review/split-sector.png); background-repeat: no-repeat; height: 250px; background-size: 100% 100%;">
+
+</section>
+<section class="section2">
+    <p style="font-size: larger;">
+        The Publisher ensures that the paper observes the correct style (in-text citations, the reference list, and
+        tables are typical areas of concern, clarity, and grammar). The authors are asked to respond to any minor
+        queries by the Publisher. Following these corrections, page proofs are emailed to the corresponding authors for
+        their final approval. At this point, only essential changes are accepted. Finally, the article appears in the
+        pages of the Review and is posted on-line.</p>
+</section>

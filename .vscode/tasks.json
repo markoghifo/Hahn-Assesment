@@ -2,40 +2,60 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/Hahn-Assesment/API.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+            "type": "docker-build",
+            "label": "docker-build: debug",
+            "dependsOn": [
+                "build"
             ],
-            "problemMatcher": "$msCompile"
+            "dockerBuild": {
+                "tag": "hahnassesment:dev",
+                "target": "base",
+                "dockerfile": "${workspaceFolder}/API/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/API/API.csproj"
+            }
         },
         {
-            "label": "publish",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "publish",
-                "${workspaceFolder}/Hahn-Assesment/API.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+            "type": "docker-build",
+            "label": "docker-build: release",
+            "dependsOn": [
+                "build"
             ],
-            "problemMatcher": "$msCompile"
+            "dockerBuild": {
+                "tag": "hahnassesment:latest",
+                "dockerfile": "${workspaceFolder}/API/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/API/API.csproj"
+            }
         },
         {
-            "label": "watch",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "watch",
-                "run",
-                "--project",
-                "${workspaceFolder}/Hahn-Assesment/API.csproj"
+            "type": "docker-run",
+            "label": "docker-run: debug",
+            "dependsOn": [
+                "docker-build: debug"
             ],
-            "problemMatcher": "$msCompile"
+            "dockerRun": {},
+            "netCore": {
+                "appProject": "${workspaceFolder}/API/API.csproj",
+                "enableDebugging": true
+            }
+        },
+        {
+            "type": "docker-run",
+            "label": "docker-run: release",
+            "dependsOn": [
+                "docker-build: release"
+            ],
+            "dockerRun": {},
+            "netCore": {
+                "appProject": "${workspaceFolder}/API/API.csproj"
+            }
         }
     ]
 }

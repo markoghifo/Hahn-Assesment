@@ -4961,38 +4961,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hp Omen\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/mark_d_king/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Documents\\DotNetCore Projects\\Hahn-Assesment\\Infrastructure\\Business.csproj",
-      "projectName": "Business",
-      "projectPath": "E:\\Documents\\DotNetCore Projects\\Hahn-Assesment\\Infrastructure\\Business.csproj",
-      "packagesPath": "C:\\Users\\Hp Omen\\.nuget\\packages\\",
-      "outputPath": "E:\\Documents\\DotNetCore Projects\\Hahn-Assesment\\Infrastructure\\obj\\",
+      "projectUniqueName": "/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/Infrastructure.csproj",
+      "projectName": "Infrastructure",
+      "projectPath": "/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/Infrastructure.csproj",
+      "packagesPath": "/Users/mark_d_king/.nuget/packages/",
+      "outputPath": "/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/Infrastructure/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Hp Omen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mark_d_king/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Documents\\DotNetCore Projects\\Hahn-Assesment\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "E:\\Documents\\DotNetCore Projects\\Hahn-Assesment\\DataAccess\\DataAccess.csproj"
+            "/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/DataAccess.csproj": {
+              "projectPath": "/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/DataAccess.csproj"
             }
           }
         }
@@ -5055,7 +5049,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

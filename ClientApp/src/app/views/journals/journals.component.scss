@@ -1,0 +1,80 @@
+
+// @import "~bootstrap/scss/_variables";
+
+#main {
+  section#top {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    #title {
+      font-style: normal;
+      //   font-weight: normal;
+      font-size: 3.5rem;
+      // line-height: 102px;
+      font-weight: 400;
+
+      .title2 {
+        font-family: Montserrat Alternates !important;
+        font-weight: 700;
+      }
+    }
+  }
+  section#how-we-work {
+    background-color: #f4f6fc;
+
+    .img {
+      background-image: url(../../../assets/images/journals-page/number-badge.png);
+      background-repeat: no-repeat;
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  section#journals {
+    background-color: #e5e5e5;
+    #projects {
+      .focused {
+        background-image: url(../../../assets/images/journals-page/main-project.png);
+        background-repeat: no-repeat;
+        background-position: center-top;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        .content {
+          visibility: hidden;
+        }
+        &:hover {
+          .content {
+            visibility: visible;
+          }
+          opacity: 5.5;
+          cursor: pointer;
+        }
+      }
+      .side {
+        background-image: url(../../../assets/images/journals-page/side-project.png);
+        background-repeat: no-repeat;
+        background-position: center-top;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        &:hover {
+          cursor: pointer;
+          border: 2px;
+          border-style: hidden outset outset hidden;
+        //   border-color: $primary-color;
+        }
+      }
+    }
+
+    h3 span small a {
+      font-size: 16px;
+      color: #282938;
+    }
+
+    #journal-listing {
+      background-color: #e5e5e5;
+    }
+  }
+}

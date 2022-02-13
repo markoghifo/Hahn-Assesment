@@ -1,0 +1,35 @@
+#main {
+  section#top {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 400px;
+    #title {
+      font-style: normal;
+      //   font-weight: normal;
+      font-size: 3.5rem;
+      // line-height: 102px;
+      font-weight: 400;
+
+      .title2 {
+        font-family: Montserrat Alternates !important;
+        font-weight: 700;
+      }
+    }
+    #text {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 28px;
+      /* or 175% */
+
+      /* White */
+
+      color: #ffffff;
+    }
+
+    button{
+      border-radius: 41px;
+    }
+  }
+}

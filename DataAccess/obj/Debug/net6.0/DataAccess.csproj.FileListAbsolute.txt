@@ -1,13 +1,27 @@
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\bin\Debug\net6.0\DataAccess.dll
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\bin\Debug\net6.0\ref\DataAccess.dll
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\bin\Debug\net6.0\DataAccess.pdb
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.dll
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.pdb
-E:\Documents\DotNetCore Projects\Hahn-Assesment\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/bin/Debug/net6.0/DataAccess.deps.json
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/bin/Debug/net6.0/DataAccess.runtimeconfig.json
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/bin/Debug/net6.0/DataAccess.dll
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/bin/Debug/net6.0/ref/DataAccess.dll
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/bin/Debug/net6.0/DataAccess.pdb
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfoInputs.cache
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfo.cs
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.csproj.CoreCompileInputs.cache
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.dll
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/obj/Debug/net6.0/ref/DataAccess.dll
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.pdb
+E:/Documents/DotNetCore Projects/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.genruntimeconfig.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Debug/net6.0/DataAccess.deps.json
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Debug/net6.0/DataAccess.runtimeconfig.json
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Debug/net6.0/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Debug/net6.0/ref/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/bin/Debug/net6.0/DataAccess.pdb
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.csproj.AssemblyReference.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfoInputs.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfo.cs
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.csproj.CoreCompileInputs.cache
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/ref/DataAccess.dll
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.pdb
+/Users/mark_d_king/Documents/DotNetCore/Hahn-Assesment/DataAccess/obj/Debug/net6.0/DataAccess.genruntimeconfig.cache

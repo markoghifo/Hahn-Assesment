@@ -29,13 +29,23 @@ namespace Business.Extensions
             return app;
         }
 
-        public static IApplicationBuilder SetupMigrations(this IApplicationBuilder app, IServiceProvider service)
+        public static IApplicationBuilder SetupMigrations(this IApplicationBuilder app)
         {
-            var logger = service.GetService<ILogger<DataContext>>();
+            var logger = app.ApplicationServices.GetService<ILogger<DataContext>>();
             try
             {
-                var context = service.GetService<DataContext>();
-                context?.Database.Migrate();
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var dataContext = scope.ServiceProvider.GetRequiredService<DataContext>();
+                    dataContext.Database.Migrate();
+                }
+                // using (var scope = service.CreateScope())
+                // {
+                //     // var context = service.GetService<DataContext>();
+                //     var context = service.GetRequiredService<DataContext>();
+                //     context?.Database.Migrate();
+                // }
+
             }
             catch (Exception ex)
             {

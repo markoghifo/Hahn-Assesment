@@ -1,0 +1,28 @@
+<div id="main">
+    <section id="top" class="bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="vertical-center">
+                        <div id="title">
+                            {{pageTitle}}
+                            <span class="title2">{{extraText}}</span>
+                        </div>
+                        <div id="text" class="mt-4">
+                            {{pageText}}
+                        </div>
+                        <div *ngIf="btnText" [routerLink]="btnRouteLink" class="mt-4">
+                            <button class="btn btn-md px-4 py-2 btn-primary mr-3">
+                                {{btnText}}
+                            </button>
+                            Learn More -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="../../../../assets/images/journals-page/top-image.png" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
